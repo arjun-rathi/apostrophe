@@ -1,0 +1,17 @@
+---
+framework: mocha
+preRun:
+     command:
+        - npm install
+        - npm run pretest
+preMerge:
+  pattern:
+    - "./test/*.js"
+postMerge:
+  pattern:
+    - "./test/*.js"
+postRun:
+     command:
+        - node --version
+configFile: mocharc.yml
+version: 1.0
