@@ -3,6 +3,10 @@ framework: mocha
 preRun:
      command:
         - npm install
+        - npm install mongodb
+        - mkdir -p data/db
+        - mongod --dbpath=data/db > /dev/null 2>&1 &
+        - sleep 3
         - npm run pretest
 preMerge:
   pattern:
